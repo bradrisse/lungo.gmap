@@ -43,7 +43,7 @@ Lungo.Sugar.GMap = (function(lng, undefined) {
      */
      var clean = function() {
         _cleanMarkers();
-        this.Route.clean();
+        if(this.Route !== undefined) this.Route.clean();
     };
 
     /**
