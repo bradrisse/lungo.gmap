@@ -43,7 +43,7 @@ Lungo.Sugar.GMap = (function(lng, undefined) {
      */
      var clean = function() {
         _cleanMarkers();
-        this.Route.clean();
+        if(this.Route !== undefined) this.Route.clean();
     };
 
     /**
@@ -81,6 +81,13 @@ Lungo.Sugar.GMap = (function(lng, undefined) {
 
         return marker;
     };
+    
+    /**
+     *
+     */
+    var getMarkers = function() {
+        return _instance_markers;
+    };
 
     /**
      *
@@ -117,7 +124,8 @@ Lungo.Sugar.GMap = (function(lng, undefined) {
         clean: clean,
         center: center,
         zoom: zoom,
-        addMarker: addMarker
+        addMarker: addMarker,
+        getMarkers : getMarkers
     }
 
 })(Lungo);
